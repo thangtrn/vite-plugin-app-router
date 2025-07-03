@@ -1,0 +1,1 @@
+export { vitePluginAppRouter } from "./plugin";

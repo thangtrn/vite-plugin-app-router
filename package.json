@@ -12,10 +12,11 @@
   },
   "scripts": {
     "build": "tsc",
+    "zip": "npm run build && npm pack",
     "format": "prettier \"{src,tests}/**/*.ts\" --write",
-    "release:patch": "npm version patch && npm publish",
-    "release:minor": "npm version minor && npm publish",
-    "release:major": "npm version major && npm publish"
+    "release:patch": "npm run build && npm version patch && npm publish",
+    "release:minor": "npm run build && npm version minor && npm publish",
+    "release:major": "npm run build && npm version major && npm publish"
   },
   "dependencies": {
     "fs": "^0.0.1-security",

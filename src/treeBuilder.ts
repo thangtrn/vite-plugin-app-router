@@ -13,7 +13,7 @@ export function buildRouteTree(files: string[]): Node {
   for (const file of files) {
     const parts = file
       .replace(/^src\/app\//, "")
-      .replace(/\.tsx$/, "")
+      .replace(/\.(tsx|jsx)$/, "")
       .split("/");
 
     let current = tree;

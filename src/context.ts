@@ -25,7 +25,7 @@ export class AppRouterContext {
   }
 
   async onFileChanged(file: string) {
-    if (!file.endsWith(".tsx") || !file.includes(path.join("src", "app")))
+    if (!file.match(/\.(tsx|jsx)$/) || !file.includes(path.join("src", "app")))
       return;
 
     await this.rebuild();

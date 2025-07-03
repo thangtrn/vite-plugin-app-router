@@ -18,7 +18,7 @@ export function findAllTsxFiles(dir: string, root: string): string[] {
 
     if (entry.isDirectory()) {
       files.push(...findAllTsxFiles(fullPath, root));
-    } else if (entry.isFile() && fullPath.endsWith(".tsx")) {
+    } else if (entry.isFile() && fullPath.match(/\.(tsx|jsx)$/)) {
       const relativePath = path.relative(root, fullPath);
       files.push(relativePath.replace(/\\/g, "/"));
     }
